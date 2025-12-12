@@ -5,17 +5,9 @@
  |  _| | |___  |   <| | | | | (_| | | |
  |_|   |_____| |_|\_\_|_|_|  \__,_|_|_|
  this script is open-sourced and orignal
- credits to @bot on rscripts or my dc at
- @ily.neo
-
- please do not skid this, you are free to
- use & repost aslong as i get my original
- credit, if i find you are posting without
- credit i will get it taken down for copying.
-
- ------------------------------------------
- this works on any game that uses collision
- based unanchored parts.
+ credits to avilogist, 12/12/25. You may
+ repurpose or use this in your own scripts
+ aslong as original credit is given.
 ]]
 --                                          [#==#  Settings (feel free to modify)  #==#]
 local blacklist={"vuInerablilty","gorferss"}--     <───┬────────> users to not target
@@ -196,4 +188,5 @@ uis.InputBegan:Connect(function(input,gpe)
     if not gpe and input.KeyCode==Enum.KeyCode.F4 then
         toggle()
     end
+
 end)
