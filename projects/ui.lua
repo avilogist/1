@@ -10213,3 +10213,4 @@ mssections.colorpicker = sections.colorpicker
 mssections.selection = sections.selection
 mssections.title = sections.title
 mssections.paragraph = sections.paragraph
+return comet
