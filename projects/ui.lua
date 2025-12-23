@@ -1033,21 +1033,6 @@ function comet:page(props)
 		}
 	)
 
-	local bgImage = utility.new(
-	    "ImageLabel",
-	    {
-	        AnchorPoint = Vector2.new(0.5, 0.5),
-	        BackgroundTransparency = 1,
-	        Image = "rbxthumb://type=Asset&id=89610404333474&w=420&h=420",
-	        ImageTransparency = 0.8,
-	        Size = UDim2.new(1, 0, 1, 0),
-	        Position = UDim2.new(0.5, 0, 0.5, 0),
-	        ScaleType = Enum.ScaleType.Fit,
-	        ZIndex = 10,
-	        Parent = pageholder
-	    }
-	)
-
 	local left = utility.new(
 		"ScrollingFrame",
 		{
@@ -1097,6 +1082,22 @@ function comet:page(props)
 			Parent = pageholder
 		}
 	)
+
+	local bgImage = utility.new(
+	    "ImageLabel",
+	    {
+	        AnchorPoint = Vector2.new(0.5, 0.5),
+	        BackgroundTransparency = 1,
+	        Image = "rbxassetid://89610404333474",
+	        ImageTransparency = 0.3,
+	        Size = UDim2.new(1, 0, 1, 0),
+	        Position = UDim2.new(0.5, 0, 0.5, 0),
+	        ScaleType = Enum.ScaleType.Fit,
+	        ZIndex = 10,
+	        Parent = outline4
+	    }
+	)
+
 	--
 	utility.new(
 		"UIListLayout",
