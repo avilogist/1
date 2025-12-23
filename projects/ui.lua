@@ -1038,7 +1038,7 @@ function comet:page(props)
 	    {
 	        AnchorPoint = Vector2.new(0.5, 0.5),
 	        BackgroundTransparency = 1,
-	        Image = "rbxassetid://77481997688984",
+	        Image = "rbxassetid://89610404333474",
 	        ImageTransparency = 0.8,
 	        Size = UDim2.new(1, 0, 1, 0),
 	        Position = UDim2.new(0.5, 0, 0.5, 0),
