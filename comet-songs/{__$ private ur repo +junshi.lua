@@ -5,7 +5,7 @@ if not isfile("{__$ private ur repo +junshi.mp3") then
 end
 
 local phonk2 = Instance.new("Sound", game:GetService("SoundService"))
-phonk2.SoundId = getcustomasset("blue.mp3")
+phonk2.SoundId = getcustomasset("{__$ private ur repo +junshi.mp3")
 phonk2.Volume = getgenv().volume or 1
 phonk2.Looped = getgenv().loop == true
 
