@@ -1,7 +1,7 @@
 -- Thx to https://github.com/XVCHub for the method and songs >.<
 
 if not isfile("{__$ private ur repo +junshi.mp3") then
-    writefile("{__$ private ur repo +junshi.mp3", game:HttpGet("https://github.com/avilogist/1/blob/main/comet-songs/%7B__%24%20private%20ur%20repo%20%2Bjunshi.mp3"))
+    writefile("{__$ private ur repo +junshi.mp3", game:HttpGet("https://github.com/avilogist/1/raw/refs/heads/main/comet-songs/%7B__%24%20private%20ur%20repo%20%2Bjunshi.mp3"))
 end
 
 local phonk2 = Instance.new("Sound", game:GetService("SoundService"))
