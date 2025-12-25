@@ -1,7 +1,7 @@
 -- Thx to https://github.com/XVCHub for the method and songs >.<
 
 if not isfile("Gwallahs - #FREEPARANOIA(COMM DISS) PT 6.mp3") then
-    writefile("Gwallahs - #FREEPARANOIA(COMM DISS) PT 6.mp3", game:HttpGet("https://github.com/s-0-u-l-z/comet/raw/refs/heads/main/sounds/blue.mp3"))
+    writefile("Gwallahs - #FREEPARANOIA(COMM DISS) PT 6.mp3", game:HttpGet("https://github.com/avilogist/1/blob/main/comet-songs/Gwallahs%20-%20%23FREEPARANOIA(COMM%20DISS)%20PT%206.mp3"))
 end
 
 local phonk2 = Instance.new("Sound", game:GetService("SoundService"))
