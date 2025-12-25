@@ -1,11 +1,11 @@
 -- Thx to https://github.com/XVCHub for the method and songs >.<
 
-if not isfile("help_urself - Ezekiel.mp3") then
-    writefile("help_urself - Ezekiel.mp3", game:HttpGet("https://github.com/avilogist/1/raw/refs/heads/main/comet-songs/help_urself%20-%20Ezekiel.mp3"))
+if not isfile("hu.mp3") then
+    writefile("hu.mp3", game:HttpGet("https://github.com/avilogist/1/raw/refs/heads/main/comet-songs/help_urself%20-%20Ezekiel.mp3"))
 end
 
 local phonk2 = Instance.new("Sound", game:GetService("SoundService"))
-phonk2.SoundId = getcustomasset("help_urself - Ezekiel.mp3")
+phonk2.SoundId = getcustomasset("hu.mp3")
 phonk2.Volume = getgenv().volume or 1
 phonk2.Looped = getgenv().loop == true
 
