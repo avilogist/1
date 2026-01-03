@@ -1,3 +1,4 @@
+-- puppyware fork for comet
 local Config = {
     Themes = {
         Default = {
