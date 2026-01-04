@@ -32,7 +32,7 @@ export default {
           }
         });
       } catch (error) {
-        return new Response('-- Error loading script', {
+        return new Response('warn("your executor is not supported by comets url loadstring, join the discord and report this issue with the name of your executor")', {
           status: 500,
           headers: { 'Content-Type': 'text/plain' }
         });
