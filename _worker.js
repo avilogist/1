@@ -1,36 +1,47 @@
-addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request))
-})
-
-async function handleRequest(request) {
-  const url = new URL(request.url)
-  const userAgent = request.headers.get('User-Agent') || ''
-  const isRobloxRequest = userAgent.toLowerCase().includes('roblox') || 
-                          userAgent.toLowerCase().includes('synapse') ||
-                          userAgent === ''
-  const acceptHeader = request.headers.get('Accept') || ''
-  const isScriptRequest = !acceptHeader.includes('text/html')
-  
-  if (isRobloxRequest || isScriptRequest) {
-    try {
-      const scriptResponse = await fetch('https://raw.githubusercontent.com/avilogist/1/refs/heads/main/projects/comet.lua')
-      const scriptContent = await scriptResponse.text()
-      
-      return new Response(scriptContent, {
-        status: 200,
-        headers: {
-          'Content-Type': 'text/plain',
-          'Access-Control-Allow-Origin': '*',
-          'Cache-Control': 'no-cache'
-        }
-      })
-    } catch (error) {
-      return new Response('-- Error loading script', {
-        status: 500,
-        headers: { 'Content-Type': 'text/plain' }
-      })
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+    const userAgent = request.headers.get('User-Agent') || '';
+    
+    // Only intercept requests to the root path
+    if (url.pathname !== '/') {
+      // Let all other requests (images, CSS, JS, etc.) pass through normally
+      return env.ASSETS.fetch(request);
     }
+    
+    // Check if the request is from Roblox (HttpGet)
+    const isRobloxRequest = userAgent.toLowerCase().includes('roblox') || 
+                            userAgent.toLowerCase().includes('synapse') ||
+                            userAgent === '';
+    
+    const acceptHeader = request.headers.get('Accept') || '';
+    const isScriptRequest = !acceptHeader.includes('text/html');
+    
+    if (isRobloxRequest || isScriptRequest) {
+      // Return the Lua script content
+      try {
+        const scriptResponse = await fetch('https://raw.githubusercontent.com/avilogist/1/refs/heads/main/projects/comet.lua');
+        const scriptContent = await scriptResponse.text();
+        
+        return new Response(scriptContent, {
+          status: 200,
+          headers: {
+            'Content-Type': 'text/plain',
+            'Access-Control-Allow-Origin': '*',
+            'Cache-Control': 'no-cache'
+          }
+        });
+      } catch (error) {
+        return new Response('-- Error loading script', {
+          status: 500,
+          headers: { 'Content-Type': 'text/plain' }
+        });
+      }
+    }
+    
+    // For normal browser requests, serve the HTML site
+    return env.ASSETS.fetch(request);
   }
-  return fetch(request)
-}
-// did claude cook??
+};
+
+// claude cooked perfectly 👨‍🍳
